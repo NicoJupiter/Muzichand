@@ -7,11 +7,73 @@
     tools:context=".MainActivity">
 
 
-    <LinearLayout
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:orientation="vertical"
+        >
 
+        <ScrollView
+            android:id="@+id/scroll_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="8dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/text_debug"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Debug messages go here"
+                />
+
+        </ScrollView>
+
+        <SeekBar
+            android:id="@+id/seekbar_audio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"/>
+
+        <LinearLayout
+            android:id="@+id/button_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button_play"
+                android:drawableLeft="@drawable/ic_play"
+                android:gravity="left|center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Play"
+                android:onClick="doPlay"/>
+
+            <Button
+                android:id="@+id/button_pause"
+                android:drawableLeft="@drawable/ic_pause"
+                android:gravity="left|center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Pause"
+                android:onClick="doPause" />
+
+            <Button
+                android:id="@+id/button_reset"
+                android:drawableLeft="@drawable/ic_stop"
+                android:gravity="left|center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Reset"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
